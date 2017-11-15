@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="form-group">
+        <h1>게시판!</h1>
+        
+        <!--<a href="/posts/new">게시물 쓰기</a>-->
+        <!--<%#= link_to "게시물 쓰기", "/posts/new" %>-->
+        <%= link_to "게시물 쓰기", new_post_path() %>
+    </div>
+    
+    <div>
+        <%= form_tag("/posts" , method: "post") do %>
+            <%= text_field_tag(:title) %>
+            <%= text_area_tag(:content, "", size: "24x6") %> </br>
+            <%= submit_tag("글쓰기") %>
+        <% end %>
+    </div>
+</div>

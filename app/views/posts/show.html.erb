@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="form-group">
+        <h1>SHOW!</h1>
+        
+        <!--<a href="/posts/new">게시물 쓰기</a>-->
+        <!--<%#= link_to "게시물 쓰기", "/posts/new" %>-->
+        <%= link_to "게시물 쓰기", new_post_path() %>
+    </div>
+    
+    <div>
+        <div>
+            <p> <%= @post.id%> </p>
+            <p> <%= @post.title%> </p>
+            <p> <%= @post.content%> </p>
+        </div>
+        <div>
+            <%= link_to "수정", edit_post_path(@post.id) %>
+            <%= link_to "삭제", "/posts/#{@post.id}", method: "delete", data: {confirm: "다시 생각해봐!"} %>
+        </div>
+    </div>
+</div>

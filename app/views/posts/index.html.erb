@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="form-group">
+        <h1>게시판!</h1>
+        
+        <!--<a href="/posts/new">게시물 쓰기</a>-->
+        <!--<%#= link_to "게시물 쓰기", "/posts/new" %>-->
+        <%= link_to "게시물 쓰기", new_post_path() %>
+    </div>
+    
+    <div class="form-group">
+        <p>
+            <% @posts.each do |p| %>
+                <!--<%#= link_to "#{p.id} : #{p.title}", "/posts/#{p.id}" %>-->
+                <!--<%#= link_to "#{p.id} : #{p.title}", post_path(p.id) %>-->
+                <%= link_to "#{p.id} : #{p.title}", post_path(p.id) %>
+            <% end %>
+        </p>
+    </div>
+</div>
